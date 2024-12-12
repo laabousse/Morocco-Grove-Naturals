@@ -1,11 +1,11 @@
-import { BasketIcon } from "@sanity/icons";
+//import { BasketIcon } from "@sanity/icons";
 import { defineType, defineField, defineArrayMember } from "sanity";
 
 export const orderType = defineType({
   name: "order",
   title: "Order",
   type: "document",
-  icon: BasketIcon,
+  //icon: BasketIcon,
   fields: [
     defineField({
       name: "orderNumber",
@@ -107,7 +107,7 @@ export const orderType = defineType({
     }),
     defineField({
       name: "status",
-      title: "OrderStatus",
+      title: "Order Status",
       type: "string",
       options: {
         list: [
@@ -139,7 +139,7 @@ export const orderType = defineType({
       return {
         title: `${select.name} - ${orderIdSnippet}`,
         subtitle: `${select.amount} ${select.currency} - ${select.email}`,
-        media: BasketIcon,
+        //media: BasketIcon,
       };
     },
   },
