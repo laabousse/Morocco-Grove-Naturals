@@ -9,6 +9,7 @@ import { LuStar } from "react-icons/lu";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RxBorderSplit } from "react-icons/rx";
 import { FiShare2 } from "react-icons/fi";
+import ViewCount from "@/components/ViewCount";
 const SingleProductPage = async ({
   params,
 }: {
@@ -61,12 +62,9 @@ const SingleProductPage = async ({
               In Stock
             </p>
           )}
-          <p className="text-base text-gray-800">
-            <span className="bg-black text-white px-3 py-1 text-sm font-semibold rounded-md mr-2">
-              20
-            </span>{" "}
-            People are viewing this right now
-          </p>
+
+          <ViewCount />
+
           <p className="text-sm text-gray-600 tracking-wide">
             {product?.description}
           </p>
