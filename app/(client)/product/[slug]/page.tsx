@@ -7,7 +7,6 @@ import Image from "next/image";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { LuStar } from "react-icons/lu";
 import { TbTruckDelivery } from "react-icons/tb";
-import { RxBorderSplit } from "react-icons/rx";
 import { FiShare2 } from "react-icons/fi";
 import ViewCount from "@/components/ViewCount";
 const SingleProductPage = async ({
