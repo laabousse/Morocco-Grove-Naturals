@@ -15,7 +15,7 @@ const ShareProduct: React.FC<ShareProductProps> = ({ product }) => {
   // Function to get the full product URL
   const getProductUrl = () => {
     return typeof window !== "undefined"
-      ? `${window.location.origin}/${product.slug}`
+      ? `${window.location.origin}/product/${product.slug}`
       : "";
   };
 
