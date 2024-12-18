@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { X, Send } from "lucide-react";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 interface AskQuestionModalProps {
   productName: string;
@@ -29,9 +30,10 @@ const AskQuestionModal: React.FC<AskQuestionModalProps> = ({ productName }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="text-sm text-black hover:text-red-600 hoverEffect"
+        className="flex items-center justify-center gap-2 text-sm text-black hover:text-red-600 hoverEffect cursor-pointer p-2 rounded-full transition-colors duration-200 ease-in-out"
       >
-        Ask a question
+        <FaRegQuestionCircle className="text-xl" />
+        <span className="hidden sm:inline">Ask a question</span>
       </button>
 
       {isOpen && (

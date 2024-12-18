@@ -4,11 +4,11 @@ import PriceView from "@/components/PriceView";
 import { getProductBySlug } from "@/sanity/helpers";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { FaRegQuestionCircle } from "react-icons/fa";
 import { LuStar } from "react-icons/lu";
-import { TbTruckDelivery } from "react-icons/tb";
-import { FiShare2 } from "react-icons/fi";
 import ViewCount from "@/components/ViewCount";
+import AskQuestionModal from "@/components/AskQuestionModal";
+import DeliveryReturnsModal from "@/components/DeliveryReturnsModal";
+import ShareProduct from "@/components/ShareProduct";
 const SingleProductPage = async ({
   params,
 }: {
@@ -69,20 +69,12 @@ const SingleProductPage = async ({
           </p>
 
           {product && <AddToCartButton product={product} />}
-          <div className="flex flex-wrap items-center justify-center md:justify-between gap-2.5 border-b border-b-gray-200 py-5 mt-2">
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <FaRegQuestionCircle className="text-lg" />
-              <p>Ask a question</p>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <TbTruckDelivery className="text-lg" />
-              <p>Delivery & Returns</p>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <FiShare2 className="text-lg" />
-              <p>Share</p>
-            </div>
+          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-4 border-b border-b-gray-200 py-5 mt-2">
+            <AskQuestionModal productName={product?.name || ""} />
+            <DeliveryReturnsModal />
+            <ShareProduct product={{ name: product?.name || "", slug: slug }} />
           </div>
+
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-5">
             <div className="border border-darkGreen/20 text-center p-3 hover:border-darkGreen hoverEffect rounded-md">
               <p className="text-base font-semibold text-black">

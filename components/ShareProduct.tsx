@@ -58,13 +58,15 @@ const ShareProduct: React.FC<ShareProductProps> = ({ product }) => {
   };
 
   return (
-    <div
+    <button
       onClick={handleShare}
-      className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect cursor-pointer"
+      className="flex items-center justify-center gap-2 text-sm text-black hover:text-red-600 hoverEffect cursor-pointer p-2 rounded-full transition-colors duration-200 ease-in-out"
     >
-      <FiShare2 className="text-lg" />
-      <p>{copied ? "Link Copied!" : "Share"}</p>
-    </div>
+      <FiShare2 className="text-xl" />
+      <span className="hidden sm:inline">
+        {copied ? "Link Copied!" : "Share"}
+      </span>
+    </button>
   );
 };
 
