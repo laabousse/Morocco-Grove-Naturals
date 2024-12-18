@@ -53,7 +53,7 @@ const ProductCard = ({ product }: Props) => {
       {/* Description */}
       <div className="p-5 flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <p className="text-gray-500 font-medium">Snacks</p>
+          <p className="text-gray-500 font-medium">{product.label}</p>
           <div className="flex items-center text-gray-500 gap-1">
             {Array.from({ length: 5 }).map((_, index) => {
               const isLastStar = index === 4;
